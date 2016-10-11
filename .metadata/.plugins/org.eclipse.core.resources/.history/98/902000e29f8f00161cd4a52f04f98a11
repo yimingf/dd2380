@@ -1,0 +1,29 @@
+package p.dd2380;
+
+import java.util.*;
+
+/**
+ * 
+ * @author yimingf
+ *
+ * record the informations 
+ */
+
+public class Road {
+	
+	// the number of vehicle running in this instance
+	private int numVehicles;
+	// the number of tracks'
+	private int tracks;
+	// a vector storing all vehicles
+	private HashMap<Integer, Vector<Vehicle>> vehicles;
+	// how long the road will be
+	private double totalDistance;
+	
+	Road() {
+		this.numVehicles = 0;
+		this.tracks = 0;
+		this.vehicles = new HashMap<Integer, Vector<Vehicle>>()
+	}
+
+}

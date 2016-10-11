@@ -1,0 +1,18 @@
+package p.dd2380;
+
+import java.util.*;
+
+
+
+public class Reporter {
+	public void report() { // initialization
+		String foo = "--- welcome to the car world! ---";
+		System.out.println(foo);
+	}
+	
+	
+	
+	public void report(HashMap<Integer, Vector<Vehicle>> vehicles, int timestamp) {
+		String foo = "--- time " + timestamp + " ---";
+	}
+}

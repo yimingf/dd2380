@@ -1,0 +1,10 @@
+!SESSION 2016-10-10 21:08:47.815 -----------------------------------------------
+eclipse.buildId=I20120608-1400
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2016-10-10 21:27:54.877
+!MESSAGE Failed to open search index.

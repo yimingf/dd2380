@@ -1,0 +1,22 @@
+package p.dd2380;
+
+import java.util.HashMap;
+import java.util.Vector;
+
+/**
+ * 
+ * @author yimingf
+ *
+ * maybe the most important part of the game
+ * I will put AI interface inside this class
+ * the Network will get the location of the vehicles and then find a better solution.
+ * 
+ */
+
+public class Network {
+	public Action makeStrategy(HashMap<Integer, Vector<Vehicle>> vehicles, int actionType) {
+		Action a = new Action();
+		
+		return a;
+	}
+}

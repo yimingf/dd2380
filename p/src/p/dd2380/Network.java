@@ -1,0 +1,51 @@
+package p.dd2380;
+
+import java.util.HashMap;
+import java.util.Vector;
+
+/**
+ * 
+ * @author yimingf
+ *
+ * maybe the most important part of the game
+ * I will put AI interface inside this class
+ * the Network will get the location of the vehicles and then find a better solution.
+ * 
+ * ========
+ * 
+ * action number is interpreted in Road as:
+ * --- without changing track (meaning original track needs to be checked) ---
+ * 0 	-> simply run, do nothing
+ * 1 	-> accelerate
+ * 2 	-> decelerate
+ * --- with changing track (meaning the other track needs to be checked) ---
+ * 3 	-> turn left (with decelerate) self.track--
+ * 4 	-> turn right (with decelerate) self.track++
+ * 
+ * ========
+ * 
+ * action type is interpreted as: (subject to change)
+ * 0 	-> normal
+ * 1 	-> safety-first (decelerate when possible danger detected)
+ * 2 	-> aggressive (accelerate most and ignore some small dangers)
+ * 
+ */
+
+public class Network {
+	public Action makeStrategy(HashMap<Integer, Vector<Vehicle>> vehicles, int actionType) {
+		Action a = new Action();
+		
+		// TODO: make a strategy
+		
+		// ----
+		// below line shows a do-nothing strategy
+		for (int i = 0; i < vehicles.size(); i++) {
+			Vector<Vehicle> vs = vehicles.get(i);
+			for (Vehicle v : vs) {
+				a.putAction(v.getNumber(), 0);
+			}
+		}
+		
+		return a;
+	}
+}

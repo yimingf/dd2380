@@ -1,0 +1,16 @@
+package p.dd2380;
+
+import java.util.*;
+
+/**
+ * 
+ * @author yimingf
+ * 
+ * a vector storing vehicles
+ * sort function is extended to sort distances hence quicker strategies could be made
+ * 
+ */
+
+public class VehicleVector extends Comparable {
+
+}

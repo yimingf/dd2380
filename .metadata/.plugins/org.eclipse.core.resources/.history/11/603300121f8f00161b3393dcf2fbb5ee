@@ -1,0 +1,13 @@
+package p.dd2380;
+
+/**
+ * 
+ * @author yimingf
+ *
+ * maybe the most important part of the game
+ * I will put AI interface inside this class
+ */
+
+public class Network {
+
+}

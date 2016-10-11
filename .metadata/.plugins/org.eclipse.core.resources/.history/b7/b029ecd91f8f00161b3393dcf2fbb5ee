@@ -1,0 +1,33 @@
+package p.dd2380;
+
+/**
+ * 
+ * @author yimingf
+ *
+ * a simplest car with some interfaces with outside the world and the Network
+ * 
+ */
+
+public class Vehicle {
+	// the max speed a vehicle could achieve
+	private double maxSpeed;
+	// the current speed
+	private double currentSpeed;
+	// the track the vehicle is on
+	
+	Vehicle() {}
+	Vehicle(int maxSpeed) {
+		this.maxSpeed = maxSpeed;
+		this.currentSpeed = 0.0;
+	}
+	
+	public double getCurrentSpeed() {
+		return this.currentSpeed;
+	}
+	
+	public double getMaxSpeed() {
+		return this.maxSpeed;
+	}
+	
+	
+}

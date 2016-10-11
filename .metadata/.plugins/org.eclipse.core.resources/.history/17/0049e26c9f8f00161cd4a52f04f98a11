@@ -1,0 +1,63 @@
+package p.dd2380;
+
+/**
+ * 
+ * @author yimingf
+ *
+ * a simplest car with some interfaces with outside the world and the Network
+ * 
+ */
+
+public class Vehicle {
+	// the max speed a vehicle could achieve
+	private double maxSpeed;
+	// the current speed
+	private double currentSpeed;
+	// the acceleration (how much speed could change during one timestamp)
+	private double acceleration;
+	// the track the vehicle is on
+	private int track;
+	//
+	
+	Vehicle() {}
+	Vehicle(double maxSpeed, double acceleration, int track) {
+		this.maxSpeed = maxSpeed;
+		this.currentSpeed = 0.0;
+		this.track = track;
+	}
+	
+	// getters
+	public double getCurrentSpeed() {
+		return this.currentSpeed;
+	}
+	
+	public double getMaxSpeed() {
+		return this.maxSpeed;
+	}
+	
+	public int getTrack() {
+		return this.track;
+	}
+	
+	public void run() {
+		// just run as normal, no accelerating, no decelerating
+	}
+	
+	public void accelerate() {
+		// accelerate when safety is guaranteed
+		// safety is detected by the network
+		// cannot accelerate over max speed
+	}
+	
+	public void decelerate() {
+		// decelerate
+	}
+	
+	public void turn(boolean isTurnRight) {
+		// if isTurnRight = true turn to the right track
+		// otherwise turn to the left track
+		// turning is accompanied w/deceleration for compulsory safety
+		// if at right/left edge of track cannot turn right/left (detected by the Road)
+	}
+	
+}

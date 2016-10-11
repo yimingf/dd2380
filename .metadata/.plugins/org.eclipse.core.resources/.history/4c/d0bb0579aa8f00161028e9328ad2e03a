@@ -1,0 +1,15 @@
+package p.dd2380;
+
+/**
+ * 
+ * @author yimingf
+ *
+ * maybe the most important part of the game
+ * I will put AI interface inside this class
+ * the Network will get the location of the vehicles and then find a better solution.
+ * 
+ */
+
+public class Network {
+
+}

@@ -1,0 +1,13 @@
+package p.dd2380;
+
+/**
+ * 
+ * @author yimingf
+ *
+ * a simplest car with some interfaces with outside the world and the Network
+ * 
+ */
+
+public class Vehicle {
+
+}

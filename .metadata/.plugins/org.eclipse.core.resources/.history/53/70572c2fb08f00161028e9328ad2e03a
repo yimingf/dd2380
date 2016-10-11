@@ -1,0 +1,28 @@
+package p.dd2380;
+
+/**
+ * 
+ * @author yimingf
+ *
+ * the main class of the project.
+ * at every timestamp the system calls the Network to control those cars
+ * after controlling cars attempt their moves
+ * if crashing happens report it with Monitor and terminate the program
+ * otherwise continue until preset timestamp has run out
+ * which means the AI has successfully passed the test
+ * 
+ */
+
+public class Main {
+	
+	public static void main(String [ ] args) {
+	      UrRobot Karel = new UrRobot(1, 1, East, 0);
+	            // Deliver the robot to the origin (1,1),
+	            // facing East, with no beepers.
+	      Karel.move();
+	      Karel.move();
+	      Karel.move();
+	      Karel.pickBeeper();
+	      Karel.turnOff();
+	}
+}

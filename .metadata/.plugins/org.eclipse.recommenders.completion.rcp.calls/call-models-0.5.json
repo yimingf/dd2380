@@ -1,0 +1,13 @@
+{
+  "C:\\Program Files\\Java\\jre1.8.0_102\\lib\\rt.jar": {
+    "coordinate": "jre:jre:zip:call:1.0.0",
+    "location": "C:\\Program Files\\Java\\jre1.8.0_102\\lib\\rt.jar",
+    "status": "RESOLVED",
+    "error": "No call model found for \u0027C:\\Program Files\\Java\\jre1.8.0_102\\lib\\rt.jar\u0027. Neither fingerprint \u0027779817e5f3810625c7b0f743fbf9193adfcb0069\u0027 nor symbolic name \u0027jre\u0027 are known."
+  },
+  "H:\\dd2380\\p\\p\\src": {
+    "location": "H:\\dd2380\\p\\p\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027H:\\dd2380\\p\\p\\src\u0027. Skipped."
+  }
+}

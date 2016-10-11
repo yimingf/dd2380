@@ -1,0 +1,9 @@
+package p.dd2380;
+
+import java.util.*;
+
+public class Monitor {
+	public void report(HashMap<Integer, Vector<Vehicle>> vehicles, int timestamp) {
+		String foo = "";
+	}
+}

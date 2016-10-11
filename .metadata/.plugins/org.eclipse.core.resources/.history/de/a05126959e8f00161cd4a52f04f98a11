@@ -1,0 +1,20 @@
+package p.dd2380;
+
+import java.util.*;
+
+/**
+ * 
+ * @author yimingf
+ *
+ * record the 
+ */
+
+public class Road {
+	
+	// the number of vehicle running in this instance
+	private int numVehicles;
+	// a vector storing all vehicles
+	private Vector<Vehicle> vehicles;
+	
+
+}

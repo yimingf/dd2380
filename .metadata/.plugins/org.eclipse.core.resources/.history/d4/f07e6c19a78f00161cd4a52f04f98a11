@@ -1,0 +1,83 @@
+package p.dd2380;
+
+import java.util.*;
+
+/**
+ * 
+ * @author yimingf
+ *
+ * record the informations 
+ */
+
+public class Road {
+	
+	// the number of vehicle running in this instance
+	private int numVehicles;
+	// the number of tracks'
+	private int tracks;
+	// a vector storing all vehicles
+	private HashMap<Integer, Vector<Vehicle>> vehicles;
+	// how long the road will be
+	private double totalDistance;
+	// a monitor to print out messages at every timestamp
+	private Monitor m;
+	// a network to make strategies
+	private Network n;
+	
+	Road(int tracks, int totalDistance) {
+		this.numVehicles = 0;
+		this.tracks = tracks;
+		this.vehicles = new HashMap<Integer, Vector<Vehicle>>();
+		this.totalDistance = totalDistance;
+		this.m = new Monitor();
+		this.n = new Network();
+		
+		for (int i = 0; i < tracks; i++) {
+			this.vehicles.put(i, new Vector<Vehicle>()); // every track -> a vector
+		}
+	}
+	
+	// getters
+	public int getNumVehicles() {
+		return this.numVehicles;
+	}
+	
+	public int getNumTracks() {
+		return this.tracks;
+	}
+	
+	public double getTotalDistance() {
+		return this.totalDistance;
+	}
+	
+	// add a new vehicle to the specified track
+	public void addVehicle(int number, double maxSpeed, double acceleration, int track) {
+		Vehicle v = new Vehicle(number, maxSpeed, acceleration, track);
+		this.vehicles.get(track).add(v);
+	}
+	
+	// sort the vehicle vectors with distance
+	public void sortTrack() {
+		
+	}
+	
+	public boolean isFinished() {
+		// for every vehicles if one vehicle has (dist >= totalDistance) return true
+		// otherwise return false
+	}
+	
+	public void makeStrategy(int actionType) {
+		Action a = this.n.makeStrategy(this.vehicles, actionType);
+		this.makeAction(a);
+	}
+	
+	public boolean makeAction(Action a) {
+		// make an action with strategy made by the network.
+		// if no crash happens return true otherwise return false
+	}
+	
+	public void monitorOutput(int timestamp) {
+		this.m.report(this.vehicles, timestamp);
+	}
+
+}
