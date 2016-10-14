@@ -11,6 +11,8 @@ import java.io.Serializable;
  */
 
 public class Vehicle implements Comparable<Vehicle>, Serializable {
+	// initial speed rate
+	private static double INIT_SPEED_RATE = 0.5;
 	// the unique number
 	private int number;
 	// the max speed a vehicle could achieve
@@ -24,13 +26,22 @@ public class Vehicle implements Comparable<Vehicle>, Serializable {
 	// how long the car has run
 	private double dist;
 	
-	Vehicle() {}
 	Vehicle(int number, double maxSpeed, double acceleration, int track, double dist) {
 		this.number = number;
 		this.maxSpeed = maxSpeed;
-		this.currentSpeed = maxSpeed;
+		this.currentSpeed = INIT_SPEED_RATE * maxSpeed;
 		this.track = track;
 		this.dist = dist;
+		this.acceleration = acceleration;
+	}
+	
+	Vehicle(Vehicle v) {
+		this.number = v.number;
+		this.maxSpeed = v.maxSpeed;
+		this.currentSpeed = v.currentSpeed;
+		this.track = v.track;
+		this.dist = v.dist;
+		this.acceleration = v.acceleration;
 	}
 	
 	// getters
@@ -82,9 +93,6 @@ public class Vehicle implements Comparable<Vehicle>, Serializable {
 	}
 	
 	private void accelerate() {
-		// accelerate when safety is guaranteed
-		// safety is detected by the network
-		// cannot accelerate over max speed
 		if (this.currentSpeed + this.acceleration >= this.maxSpeed) {
 			this.currentSpeed = this.maxSpeed;
 		} else {
@@ -95,7 +103,6 @@ public class Vehicle implements Comparable<Vehicle>, Serializable {
 	}
 	
 	private void decelerate() {
-		// decelerate
 		if (this.currentSpeed - this.acceleration <= 0.0) {
 			this.currentSpeed = 0.0;
 		} else {
@@ -106,10 +113,6 @@ public class Vehicle implements Comparable<Vehicle>, Serializable {
 	}
 	
 	private void turn(boolean isTurnRight) {
-		// if isTurnRight = true turn to the right track
-		// otherwise turn to the left track
-		// turning is accompanied w/deceleration for compulsory safety
-		// if at right/left edge of track cannot turn right/left (detected by the Road)
 		if (isTurnRight) {
 			this.track++;
 		} else {
@@ -120,7 +123,7 @@ public class Vehicle implements Comparable<Vehicle>, Serializable {
 	}
 	
 	public int compareTo(Vehicle other) {
-    	return Double.compare(other.dist, dist);
+    	return Double.compare(dist, other.dist);
     }
 	
 }

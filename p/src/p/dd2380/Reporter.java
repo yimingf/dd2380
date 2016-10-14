@@ -24,16 +24,22 @@ public class Reporter {
 		System.out.println(foo);
 	}
 	
-	public void report(HashMap<Integer, Vector<Vehicle>> vehicles, int timestamp) {
+	public void report(HashMap<Integer, Vector<Vehicle>> vehicles, int timestamp, boolean ifCrash) {
 		String foo = "--- [time] at timestamp " + timestamp + " ---\n";
-		foo += "everything seems normal.\n";
+		if (ifCrash) {
+			foo += "some crash happened and EVERYTHING IS DOOMED.\n";
+			foo += "we... are... DESPAIR... now...\n";
+		} else {
+			foo += "everything seems normal.\n";
+		}
+		
 		
 		for (int i = 0; i < vehicles.size(); i++) {
 			foo += "--- at track " + i + ": ---\n";
 			Vector<Vehicle> vs = vehicles.get(i);
 			for (Vehicle v : vs) {
-				foo += "vehicle id: " + v.getNumber() + "/";
-				foo += "speed: " + v.getCurrentSpeed() + "/";
+				foo += "vehicle id: " + v.getNumber() + "/ ";
+				foo += "speed: " + v.getCurrentSpeed() + "/ ";
 				foo += "dist: " + v.getDist() + "\n";
 			}
 		}
@@ -41,11 +47,23 @@ public class Reporter {
 		System.out.println(foo);
 	}
 	
-	public void reportCrash(int timestamp, Vehicle bar, Vehicle baz) {
+	public void reportCrash(int timestamp, int track, int id) {
 		String foo = "--- [crash] at timestamp " + timestamp + " ---\n";
 		foo += "oooooooooooooooooooooooooooops!!!!!!!!!!!\n";
-		foo += "now track " + bar.getTrack() + " IS JUST A PIECE OF SHIT!!!!!\n";
-		foo += "driver " + bar.getNumber() + ": I FEEEEEEEEEEEL LIKE DYING!! walaRAOLEFIEOFEOIFANFOI\n";
-		foo += "driver " + baz.getNumber() + ": O I'M BURNING! I FEEEEEL LIKE HELL!!!!\n";
+		foo += "now track " + track + " IS JUST A PIECE OF SHIT!!!!!\n";
+		foo += "driver " + id + ": I FEEEEEEEEEEEL LIKE DYING!! walaRAOLEFIEOFEOIFANFOI\n";
+		foo += "WHOEVER DESIGNED THIS F**KING SYSTEM";
+		
+		System.out.println(foo);
 	}
+	
+	public void reportSuccess(int timestamp) {
+		String foo = "--- [succ] congratulations!\n";
+		foo += "you made it after " + timestamp + " timestamps!!\n";
+		foo += "but our princess BEACH is in another castle!\n";
+		foo += "would you like to pick up another pieces of shit?\n";
+		
+		System.out.println(foo);
+	}
+
 }

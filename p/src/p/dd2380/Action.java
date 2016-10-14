@@ -29,4 +29,18 @@ public class Action {
 	public int getAction(int id) {
 		return this.actions.get(id);
 	}
+	
+	public int getSize() {
+		return this.actions.size();
+	}
+	
+	public void printActions() {
+		for (int i = 0; i < actions.size(); i++) {
+			System.out.println("action number of " + i + ": " + actions.get(i));
+		}
+	}
+	
+	Action() {
+		this.actions = new HashMap<Integer, Integer>();
+	}
 }

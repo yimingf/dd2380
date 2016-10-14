@@ -15,30 +15,38 @@ package p.dd2380;
 
 public class Main {
 	
-	private static int NUMBER_OF_TRACKS = 3;
-	private static int TOTAL_DISTANCE = 2000;
-	private static int TIMESTAMP = 10;
+	public static int NUMBER_OF_TRACKS = 3;
+	public static int TOTAL_DISTANCE = 100000;
+	public static int TIMESTAMP = 20;
 	
-	private static int ACTION_NORMAL = 0;
-	private static int ACTION_SAFETYFIRST = 1;
-	private static int ACTION_AGGRESSIVE = 2;
+	public static int ACTION_BABY = 0;
+	public static int ACTION_SAFETYFIRST = 1;
+	public static int ACTION_AGGRESSIVE = 2;
 	
 	public static void main(String[] args) {
 		Road r = new Road(NUMBER_OF_TRACKS, TOTAL_DISTANCE);
+		boolean isCrash = false;
 		
 		// addVehicle(int number, double maxSpeed, double acceleration, int track, double dist)
-		r.addVehicle(0, 200, 10, 0, 400);
-		r.addVehicle(1, 300, 20, 0, 0);
+		r.addVehicle(0, 120, 10, 0, 400);
+		r.addVehicle(1, 100, 20, 0, 350);
 		r.addVehicle(2, 300, 20, 1, 200);
 		r.addVehicle(3, 300, 20, 2, 0);
 		r.addVehicle(4, 300, 20, 2, 400);
 		
+		r.sortTrack();
 		for (int i = 0; i < TIMESTAMP; i++) {
-			if (r.makeStrategy(ACTION_NORMAL)) { // no crash happens
-				r.monitorOutput(i);
-			} else {
+			if (r.makeStrategy(ACTION_SAFETYFIRST)) { // no crash happens
+				boolean foo = r.isFinished();
+				r.monitorOutput(i, false, foo);
+				r.updateTime();
+				if (foo) {
+					break;
+				}
+			} else { // crash happens
 				break;
 			}
 		}
+		
 	}
 }
