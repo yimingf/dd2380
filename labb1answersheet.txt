@@ -1,0 +1,375 @@
+answers for labb 1 AI 2016
+
+---------------------------------
+
+question 1 
+
+pi 
+0.5 0.5 
+
+A
+0.5 0.5 
+0.5 0.5
+
+B
+0.9 0.1
+0.5 0.5
+
+---------------------------------
+
+Question 2
+
+pi*a 
+
+e.g 
+[0.5, 0.5] *[[0.5, 0.5]
+			 [0.5, 0.5]]
+
+difference:
+not taking the observations into account, only calculating the probabilities for being in the different states
+
+---------------------------------
+
+Question 3
+0.7 0.3
+probabilities of what is possible to observe in the next state
+
+---------------------------------
+
+Question 4
+because of Xt = Xi already captures all the neccessary information regarding Ot 
+
+e.g 
+			Ot is conditionally independent from O1:t-1 given Xt
+	X1 > 	X2 > ... > 	Xt > 	Xt+1 
+	|		|			 |		  |
+	O1		O2	 		Ot 		Ot+1
+
+---------------------------------
+
+Question 5 
+delta is a |t|*|n| matrix e.g. length of observation sequence times length of possible states, same for the delta idx matrix.
+
+---------------------------------
+
+Question 6 
+bayes theorem 
+
+----------------------------------
+
+Question 7 
+Yes the algorithm converges
+took 959 iterations. 
+The proximity to the "real" values that the model should have is how convergence is interpreted, you could calculate the difference between each calculated number and the number it is supposed to be. Otherwise convergence can mean when the calculations of the alpha pass and the beta pass is small enough.
+with the number of observations being around 225 the algorithm stopped converging, the additive distance was higher for the results than the matrix that was given in the beginning.
+---------------------------------
+
+Question 8
+Assuming the intention of the task is to initialize the matrixes differently than in the previous question, the indata is as follows:
+
+
+3 3 0.2 0.3 0.5 0.8 0.03 0.17 0.5 0.4 0.1
+3 4 0.8 0.2 0.0 0.0 0.1 0.2 0.1 0.6 0.04 0.2 0.06 0.7 
+1 3 0.1 0.4 0.5 
+1000 0 3 3 2 1 0 2 3 0 0 2 3 0 0 2 3 0 0 0 0 1 2 2 3 1 3 0 2 3 1 2 3 1 3 3 1 2 0 3 1 2 2 2 1 1 1 0 2 0 3 2 3 2 1 1 2 3 1 2 1 2 1 2 1 1 3 3 1 1 2 3 0 0 1 1 2 3 1 1 0 1 1 1 1 1 3 3 1 1 3 0 0 3 1 3 1 3 3 2 1 3 3 2 3 3 3 1 1 1 1 2 1 3 3 3 0 1 0 0 3 3 2 2 3 3 3 2 1 0 0 3 3 1 0 2 2 2 0 0 2 3 1 1 1 2 2 3 3 1 1 0 0 1 2 0 0 2 0 1 1 0 0 0 0 3 3 1 2 0 0 2 3 2 2 0 1 1 3 1 1 0 3 3 0 3 3 3 2 3 2 3 1 2 1 2 0 0 0 0 3 0 3 3 3 3 1 1 3 2 1 2 0 3 3 3 3 3 3 0 0 2 3 2 1 1 1 3 2 2 2 1 2 1 1 2 3 1 2 3 1 1 1 3 3 2 2 2 1 0 2 2 1 0 3 2 2 3 1 0 1 2 2 2 0 3 1 2 0 3 0 0 3 1 2 2 3 1 1 0 2 2 1 3 2 3 1 0 0 0 2 1 3 3 0 1 0 3 0 2 0 0 3 2 3 3 3 2 3 2 3 1 3 3 0 1 0 2 2 1 2 3 3 1 3 2 3 3 3 1 2 1 3 0 1 2 0 1 3 3 3 3 2 1 1 1 1 3 3 1 1 3 3 2 0 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 2 0 2 0 3 1 3 1 3 2 0 0 0 0 0 1 2 3 0 1 1 0 2 3 2 1 0 2 1 2 2 2 1 1 2 2 1 3 3 3 3 1 3 1 0 2 1 2 1 3 1 1 3 0 0 1 0 1 3 3 2 2 1 2 3 2 1 2 1 1 1 0 0 0 2 2 2 1 3 3 1 1 2 2 1 1 2 3 1 2 1 0 0 3 2 1 3 2 2 3 0 0 3 3 0 3 0 0 1 0 0 2 3 1 0 0 0 1 2 2 3 2 3 1 0 2 2 3 3 1 1 2 1 1 1 3 2 2 3 2 0 3 3 0 0 0 0 0 0 0 0 2 2 3 3 3 2 3 2 1 3 0 2 1 2 0 0 0 2 3 2 2 2 1 3 3 2 1 2 0 0 3 2 1 2 3 1 0 1 3 3 3 2 2 0 0 0 2 2 3 1 1 3 0 0 3 0 0 3 0 1 3 0 3 0 0 0 0 0 0 0 0 3 2 3 1 2 3 0 3 3 2 0 3 2 1 1 0 1 0 0 0 0 2 3 3 3 1 1 3 1 2 3 0 3 3 3 0 0 1 1 0 3 2 2 3 1 1 3 1 1 3 2 0 2 0 0 2 0 0 0 1 0 1 1 0 0 0 0 0 2 2 3 3 1 3 3 3 1 0 2 3 3 3 0 1 1 1 1 0 0 3 3 3 2 3 2 3 3 2 3 3 3 3 3 2 2 1 3 1 0 1 1 1 0 3 1 0 0 3 3 2 2 2 3 3 1 1 1 2 1 3 2 1 1 2 3 2 2 1 2 2 1 1 2 1 0 0 1 2 1 2 1 1 2 0 0 3 2 3 2 1 1 3 2 3 3 3 0 2 0 3 3 1 1 1 2 2 0 0 0 0 0 1 1 1 3 2 3 2 0 0 3 2 3 1 2 0 3 2 1 2 1 0 1 1 1 2 2 2 2 2 3 3 2 3 2 1 3 3 2 2 2 1 0 1 3 2 1 0 3 2 2 1 1 3 3 3 3 1 0 3 3 3 2 3 3 2 3 0 1 0 1 2 2 1 2 1 2 3 3 3 0 1 2 2 3 1 1 0 3 2 2 1 1 0 0 1 0 0 0 1 1 0 0 0 0 2 0 0 0 3 3 0 0 3 1 2 2 1 0 0 2 2 3 0 3 0 3 2 2 3 3 2 0 2 3 0 0 3 1 0 0 1 2 0 0 3 3 1 1 3 2 3 1 3 3 1 3 3 3 2 3 1 0 1 3 2 1 2 3 3 0 2 0 0 1 0 3 2 0 2 3 1 3 1 1 2 1 1 2 2 1 1 3 2 2 0 0 1 1 0 0 0 2 2 0 0 3 2 2 1 2 3 3 0 0 2 0 0 0 3 3 3 2 0 1 0 1 1 3 
+
+
+------------------------------- OUTDATA BELOW -------------------------------
+stopped due to logProb <= oldLogProb!
+Iterations 2042
+logProb -582.5315235158098
+
+
+PI original
+.1000 .4000 .5000
+
+A original
+.2000 .3000 .5000
+.8000 .0300 .1700
+.5000 .4000 .1000
+Difference from correct value for old A
+.5000000 .2500000 .2500000
+.7000000 .7700000 .0700000
+.3000000 .1000000 .4000000
+Total additive distance 3.34 should be 0
+A
+.3600 .0000 .6400
+.1547 .8453 .0000
+.1458 .0170 .8372
+Difference from correct value for A
+.3400372 .0500000 .3900372
+.0547163 .0452837 .1000000
+.0542163 .2830303 .3372466
+Total additive distance 1.6545675488642675 should be 0
+
+B original
+.8000 .2000 .0000 .0000
+.1000 .2000 .1000 .6000
+.0400 .2000 .0600 .7000
+Difference from correct value for old B
+.1000000 .0000000 .1000000 .0000000
+.0000000 .2000000 .2000000 .4000000
+.0400000 .1000000 .1400000 .0000000
+Total additive distance 1.2800000000000002 should be 0
+B
+1.0000 .0000 .0000 .0000
+.6917 .2175 .0907 .0000
+.0000 .3153 .3128 .3720
+Difference from correct value for B
+.3000000 .2000000 .1000000 .0000000
+.5917422 .1824796 .2092625 .2000000
+.0000000 .2152754 .1127716 .3280470
+Total additive distance 2.4395782769365195 should be 0
+------------------------------- OUTDATA STOP -------------------------------
+
+Difficulties lies in it being hard to see 
+how different the matrixes are by only looking at the values in them
+This can be solved by calculating the distance for every value in the correct matrix (which we are given) and the converged matrix
+it seems as the distance between the b matrix and the correct b matrix is increased, for A it has come closer.
+
+Running the data from question 7 gives a much smaller additive distance of 0.4756320255640867 from the correct matrix implying that counting the distances of each number could be an alright method to use in this case. 
+
+---------------------------------
+
+Question 9
+2 hidden states 4 possible observations 1000 emissisons 
+5330 iterations
+logProb -584.6274507309373
+
+2 hidden states 4 possible observations 10000 emissions 
+321 iterations
+logProb -5846.782586847032
+
+3 hidden states 4 possible observations 1000 emissions
+Iterations 956
+logProb -580.660904437803
+
+3 hidden states 4 possible observations 10000 emissions
+1524 iterations
+logProb -5824.254375295524
+
+4 hidden states 4 possible observations 1000 emissions 
+9186 iterations
+logProb -578.3742487126026
+
+4 hidden states 4 possible observations 10000 emissions
+6908 iterations
+logProb -5820.593055069631
+
+
+
+
+more zeroes where more hidden states existed
+
+longer runtime for more states 
+too many states could perhaps lead to overfitting and to few states to underfitting (if that exists...)
+the amount of data and the type of data largely decides the amount of possible observations. 
+it also depends on the kind of problem, say you know the states but not a or b, then you would probably want modify the amount of states accordingly.
+
+---------------------------------
+
+Question 10 
+The algorithm does not approach the correct values when initialized with uniform values, unable to aproach a maximum.
+
+-------------------- results from run with uniform values below -------------------- 
+
+stopped due to logProb <= oldLogProb!
+Iterations 3
+logProb -601.3946033943971
+
+
+PI original
+.3333 .3333 .3333
+
+A original
+.3333 .3333 .3333
+.3333 .3333 .3333
+.3333 .3333 .3333
+Difference from correct value for old A
+.3667000 .2833000 .0833000
+.2333000 .4667000 .2333000
+.1333000 .0333000 .1667000
+Total additive distance 1.9998999999999998 should be 0
+A
+.3333 .3333 .3333
+.3333 .3333 .3333
+.3333 .3333 .3333
+Difference from correct value for A
+.3666667 .2833333 .0833333
+.2333333 .4666667 .2333333
+.1333333 .0333333 .1666667
+Total additive distance 2.0000000000000235 should be 0
+
+B original
+.2500 .2500 .2500 .2500
+.2500 .2500 .2500 .2500
+.2500 .2500 .2500 .2500
+Difference from correct value for old B
+.4500000 .0500000 .1500000 .2500000
+.1500000 .1500000 .0500000 .0500000
+.2500000 .1500000 .0500000 .4500000
+Total additive distance 2.1999999999999997 should be 0
+B
+.2432 .2482 .2362 .2723
+.2432 .2482 .2362 .2723
+.2432 .2482 .2362 .2723
+Difference from correct value for B
+.4567568 .0482482 .1362362 .2722723
+.1432432 .1517518 .0637638 .0722723
+.2432432 .1482482 .0362362 .4277277
+Total additive distance 2.2000000000000033 should be 0
+
+-------------------- End of results from uniform -------------------- 
+
+When the algorithm is initialized with a diagonal matrix and pi = [0 0 1] 
+the result is NaN 
+if the state is unable to transition from the initial state as is the case now, nothing should happen, and its going to iterate until maxiterations has been reached.
+
+-------------------- Start diagonal run -------------------- 
+Max iterations reached  < -------------- !!
+Iterations 2
+logProb NaN
+
+
+PI original
+.0000 .0000 1.0000
+
+A original
+1.0000 .0000 .0000
+.0000 1.0000 .0000
+.0000 .0000 1.0000
+Difference from correct value for old A
+.3000000 .0500000 .2500000
+.1000000 .2000000 .1000000
+.2000000 .3000000 .5000000
+Total additive distance 2.0 should be 0
+A
+? ? ?
+? ? ?
+? ? ?
+Difference from correct value for A
+? ? ?
+? ? ?
+? ? ?
+Total additive distance NaN should be 0
+
+B original
+.5000 .2000 .1100 .1900
+.2200 .2800 .2300 .2700
+.1900 .2100 .1500 .4500
+Difference from correct value for old B
+.2000000 .0000000 .0100000 .1900000
+.1200000 .1200000 .0700000 .0700000
+.1900000 .1100000 .0500000 .2500000
+Total additive distance 1.3800000000000001 should be 0
+B
+? ? ? ?
+? ? ? ?
+? ? ? ?
+Difference from correct value for B
+? ? ? ?
+? ? ? ?
+? ? ? ?
+Total additive distance NaN should be 0
+-------------------- End diagonal run -------------------- 
+
+
+If the algorithm is initialised with numbers close to the solution the difference between the correct solution and the calculated will be higher 
+than the difference was from the beginning both for many observations as well as few.
+-------------------- Close to the solution run N = 10000-------------------- 
+stopped due to logProb <= oldLogProb!
+Iterations 973
+logProb -5824.249100304507
+
+
+PI original
+.9000 .0500 .0500
+
+A original
+.6900 .0600 .2500
+.1010 .8200 .0790
+.2000 .3200 .4800
+Difference from correct value for old A
+.0100000 .0100000 .0000000
+.0010000 .0200000 .0210000
+.0000000 .0200000 .0200000
+Total additive distance 0.10199999999999995 should be 0
+A
+.6940 .0452 .2608
+.1178 .7457 .1365
+.1540 .2566 .5894
+Difference from correct value for A
+.0060155 .0047567 .0107722
+.0177860 .0542662 .0364803
+.0459676 .0434482 .0894158
+Total additive distance 0.30890852554097376 should be 0
+
+B original
+.7000 .1900 .1100 .0000
+.1200 .3800 .3000 .2000
+.0010 .0990 .1900 .7100
+Difference from correct value for old B
+.0000000 .0100000 .0100000 .0000000
+.0200000 .0200000 .0000000 .0000000
+.0010000 .0010000 .0100000 .0100000
+Total additive distance 0.08200000000000003 should be 0
+B
+.7104 .1862 .1034 .0000
+.0989 .4213 .3122 .1676
+.0321 .1715 .1868 .6096
+Difference from correct value for B
+.0103913 .0138111 .0034198 .0000000
+.0011294 .0212984 .0122261 .0323951
+.0321270 .0714557 .0132323 .0903503
+Total additive distance 0.3018365914663772 should be 0
+
+
+-------------------- start close to solution run N=1000 -------------------- 
+
+stopped due to logProb <= oldLogProb!
+Iterations 2267
+logProb -580.6611050544669
+
+
+PI original
+.9000 .0500 .0500
+
+A original
+.6900 .0600 .2500
+.1010 .8200 .0790
+.2000 .3200 .4800
+Difference from correct value for old A
+.0100000 .0100000 .0000000
+.0010000 .0200000 .0210000
+.0000000 .0200000 .0200000
+Total additive distance 0.10199999999999995 should be 0
+A
+.6865 .0114 .3021
+.0979 .8067 .0953
+.2010 .2936 .5054
+Difference from correct value for A
+.0135414 .0385933 .0521346
+.0020558 .0067230 .0046671
+.0010202 .0063850 .0053648
+Total additive distance 0.13048517472984894 should be 0
+
+B original
+.7000 .1900 .1100 .0000
+.1200 .3800 .3000 .2000
+.0010 .0990 .1900 .7100
+Difference from correct value for old B
+.0000000 .0100000 .0100000 .0000000
+.0200000 .0200000 .0000000 .0000000
+.0010000 .0010000 .0100000 .0100000
+Total additive distance 0.08200000000000003 should be 0
+B
+.6973 .2317 .0710 .0000
+.0677 .4172 .2812 .2339
+.0000 .0000 .3547 .6453
+Difference from correct value for B
+.0026665 .0316552 .0289887 .0000000
+.0322912 .0171936 .0188115 .0339091
+.0000000 .1000000 .1546716 .0546716
+Total additive distance 0.47485921059297037 should be 0
+
+-------------------- End close to solution run ---------------------
